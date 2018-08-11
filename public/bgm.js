@@ -39,7 +39,7 @@
   }
 
 document.body.addEventListener('keyup',e=>{
-   if(window.dialog.isShowing)return;
+   if(window.dialog.isShowing && window.gameHasBegun)return;
    switch(e.code){
      case window.config.keys.nextSong: playNextSong();
        break;

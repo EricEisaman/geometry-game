@@ -1,5 +1,5 @@
 document.addEventListener('keydown',e=>{
-  if(e.code == window.config.keys.toggleCursor){
+  if(e.code == window.config.keys.toggleCursor && window.gameHasBegun){
     let c = document.querySelector('#cam-cursor');
     if(c.getAttribute('visible')){
       c.setAttribute('visible',false);

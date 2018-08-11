@@ -56,9 +56,13 @@ ____
 
 
 
-**Screenshot**
+**Thruster Animation**
 
 ![App Screen2](https://cdn.glitch.com/97457b24-474e-42eb-9358-c8bc7bab1d9f%2Fapp-screen.gif?1533847350291)
+
+**Screenshot with Four Players**
+
+![App Screen3](https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2F4players.png?1534020052774)
 
 **Environment Settings**  ( index.html )
 
