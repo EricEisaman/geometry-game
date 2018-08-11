@@ -11,14 +11,14 @@ window.config = {
   color: '#fff'
  },
  sounds:{
-  playerJoined: 'https://cdn.glitch.com/3294c4a3-a3d8-412f-a31e-1e03d1cd1cbd%2FLightning.mp3?1532436721264',
+  playerJoined: 'https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2Fbell.mp3?1534013494867',
   playerLeft:  'https://cdn.glitch.com/3294c4a3-a3d8-412f-a31e-1e03d1cd1cbd%2Fplayer-leave.mp3?1532440646173'
  },
  msg:{
   color: "#000"
  },
  //Soundcloud track numbers from share/embed code
- songs:[120585130,156420873,180582345,1801713],
+ songs:[265693310,120585130,156420873,180582345,1801713],
  releasePointerLockOnUI: false,
  //SEE REF. http://keycode.info/
  keys:{
