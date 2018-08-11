@@ -1,4 +1,4 @@
- ![geometry game](https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2Fgeo-game.gif?1533996361787) 
+ ![geometry game](https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2Fgeogame.gif?1534009142333) 
 # Geometry Game 
 ____
 ____
