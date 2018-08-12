@@ -64,9 +64,7 @@ ____
 
 ![App Screen3](https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2F4players.png?1534020052774)
 
-**Environment Settings**  ( index.html )
-
-![Environment](https://cdn.glitch.com/f54ba682-ab47-46e4-bf61-5e68e6053f18%2Fenvironment.png?1532871874928)
+**Environment Presets**  
 
 ![Environement Options](https://github.com/feiss/aframe-environment-component/raw/master/assets/aframeenvironment.gif?raw=true)
 
