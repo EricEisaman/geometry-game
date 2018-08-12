@@ -11,8 +11,10 @@ $('.try-again').click(function(){
   $('#un').focus();
 });
 
+$('.login-background').css('background',window.config.login.overlayColor);
+
 $('#game-name').html(window.config.login.gameName);
-if(window.config.login.backgroundColor != "")$('.login-form').css('background',window.config.login.backgroundColor);
+if(window.config.login.backgroundColor != "")$('.login-form').css('background',window.config.login.formColor);
 $('.login').show();
 $('#un').focus();
 

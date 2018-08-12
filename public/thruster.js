@@ -21,13 +21,13 @@ window.addThruster = player=>{
   thruster.setAttribute('visible',false);
   for(let i=0;i<4;i++){
     let e = document.createElement('a-entity');
-    e.setAttribute('rain','width:0.5;height:8;splash:false;color:#f66;dropRadius:0.1,vector:0,-15,0;count:500');
+    e.setAttribute('rain',`width:0.5;height:8;splash:false;color:${window.config.thruster.outerColor};dropRadius:0.1,vector:0,-15,0;count:500`);
     e.setAttribute('rotation',r1[i]);
     thruster.appendChild(e);
   }
   for(let j=0;j<4;j++){
     let e = document.createElement('a-entity');
-    e.setAttribute('rain','width:0.5;height:6;splash:false;color:#f11;dropRadius:0.3,vector:0,-15,0;count:100');
+    e.setAttribute('rain',`width:0.5;height:6;splash:false;color:${window.config.thruster.innerColor};dropRadius:0.3,vector:0,-15,0;count:100`);
     e.setAttribute('rotation',r2[j]);
     thruster.appendChild(e);
   }
