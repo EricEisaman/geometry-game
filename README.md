@@ -7,7 +7,7 @@ ____
 
 
 
-Set the **ADMIN_KEY** in .env. Change the scene's environment preset in the **index.html.**  Create your own **.glb** models with <a href="http://pixologic.com/sculptris/" no-opener no-referer>**Sculptris**</a> and <a href="https://www.blender.org/download/" no-opener no-referer>**Blender**</a>.
+Set the **ADMIN_KEY** in .env. Create your own **.glb** models with <a href="http://pixologic.com/sculptris/" no-opener no-referer>**Sculptris**</a> and <a href="https://www.blender.org/download/" no-opener no-referer>**Blender**</a>.
 
 In the **client-config.js** set the values for:
   - game name shown at login
