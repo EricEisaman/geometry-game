@@ -53,7 +53,7 @@ Note: **Users cannot be logged in more than once simultaneously!**
 
 Pressing the **F** key or clicking the **VR Headset Icon** will take you to fullscreen mode.  Note: in fullscreen mode only movement keys are enabled.  Press the **ESC** key to exit fullscreen mode. 
 
-<a href="https://sky-island.glitch.me/" no-opener no-referer>**LIVE DEMO**</a>
+<a href="https://geometry-game.glitch.me/" no-opener no-referer>**LIVE DEMO**</a>
 
 ____
 
