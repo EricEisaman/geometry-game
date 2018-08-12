@@ -21,7 +21,9 @@ In the **client-config.js** set the values for:
   - custom key bindings/behaviors
   - sythesized voice settings
   - physics gravity
-  - grabbable physics objects to be added to the scene
+  - movable physics objects to be added to the scene
+  - environment settings
+  - thruster colors
   
 Explore the different voice names by listing them in the client console with:
 ```js
