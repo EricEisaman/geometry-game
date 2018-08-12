@@ -12,6 +12,7 @@ Set the **ADMIN_KEY** in .env. Create your own **.glb** models with <a href="htt
 In the **client-config.js** set the values for:
   - game name shown at login
   - login form background color
+  - login overlay color
   - avatar array of face image URLs ( use .png with transparent background )
   - avatar color used for button background 
   - the text color for the messages
