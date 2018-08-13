@@ -2,12 +2,11 @@ window.bodies = [];
 window.setCustomPhysics = ()=>{
   let scene = document.querySelector('a-scene');
   scene.setAttribute('physics',`gravity:${window.config.physics.gravity}`);
-  scene.setAttribute('raycaster',"far: 100;");
-  scene.setAttribute('cursor',"rayOrigin: mouse");
+  document.querySelector('[cursor]').setAttribute('raycaster',`far: ${window.config.physics.maxGrabDistance};`);
   window.config.physics.objects.forEach(o=>{
     let e = document.createElement('a-entity');
     e.setAttribute('geometry', o.geometry);
-    e.setAttribute('grabbable', '');
+    e.setAttribute('grabbable','');
     e.setAttribute('line','start:0 0 0;end:0 0 0;color:green');
     e.setAttribute('material', `color:${o.color}`);
     //e.setAttribute(o.type,(o.type == 'dynamic-body')?`mass:${o.mass}`:'' );

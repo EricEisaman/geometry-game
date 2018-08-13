@@ -123,11 +123,16 @@ AFRAME.registerComponent("grabbable", {
 		{
 			e.cancelBubble = true;
 			if(isDragging) return;
-			
+      
 			isDragging = true;
 
 			var cursor = e.detail.cursorEl;
 			if(cursor == self.el.sceneEl) cursor = document.querySelector("[camera]"); //This handles the scenario where the user isn't using motion controllers
+      // avoid seeing flickering at origin during reparenting
+      self.el.setAttribute('visible', false);
+      setTimeout(()=>{
+        self.el.setAttribute('visible', true);
+      },20);
 
 			createProxyObject(cursor.object3D);
 			
@@ -158,6 +163,11 @@ AFRAME.registerComponent("grabbable", {
 		function createProxyObject(cursorObject)
 		{
 			self.proxyObject = new THREE.Object3D();
+      self.originEl.visible = false;
+      //handle object momentary flicker at world origin
+      setTimeout(()=>{
+        self.originEl.visible = true;
+      },1000);
 			cursorObject.add(self.proxyObject);
 			copyTransform(self.originEl.object3D, self.proxyObject);				
 		}
