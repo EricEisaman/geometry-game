@@ -18,7 +18,7 @@ document.querySelector('a-scene').addEventListener('loaded', function () {
   window.setCustomPhysics();
   var player = document.querySelector('#player');
   player.components.camera.system.updateProperties();
-  setTimeout(()=>{player.pause()},2000);
+  setTimeout(()=>{player.pause()},600);
   window.login = document.querySelector('#login');
     
   window.startGame = ()=>{

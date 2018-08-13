@@ -1,5 +1,6 @@
 window.dialog = {
   init:()=>{
+    window.dialog.isShowing = false;
     window.dialog.button = document.getElementById('submit-message');
     window.dialog.submit =()=>{
       let msg = document.getElementById('msg').value;
