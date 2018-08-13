@@ -26,6 +26,7 @@ In the **client-config.js** set the values for:
   - custom key bindings/behaviors
   - sythesized voice settings
   - physics gravity
+  - maximum grab distance for movable objects
   - movable physics objects to be added to the scene
   - environment settings
   - thruster colors
