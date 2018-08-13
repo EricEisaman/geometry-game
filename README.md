@@ -10,7 +10,11 @@ ____
 Set the **ADMIN_KEY** in .env. Create your own **.glb** models with <a href="http://pixologic.com/sculptris/" no-opener no-referer>**Sculptris**</a> and <a href="https://www.blender.org/download/" no-opener no-referer>**Blender**</a>.
 
 In the **client-config.js** set the values for:
-  - game name shown at login
+  - game name
+  - emoji following game name in browser tab
+  - favicon showing in browser tab
+  - login font family
+  - login font color
   - login form background color
   - login overlay color
   - avatar array of face image URLs ( use .png with transparent background )
