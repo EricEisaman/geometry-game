@@ -45,6 +45,7 @@ window.config = {
  physics:{
    //This gravity affects the players
    gravity: -9.8,
+   maxGrabDistance: 40,
    //These objects are not affected by gravity or collisions, but you can grab and move them
    objects:[
             {geometry:'primitive: sphere; radius: 2',position:'-10 5 -10',color:'#7A42B8'},

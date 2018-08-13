@@ -8,9 +8,11 @@ if(window.config.login.fontFamily.length > 0){
   document.querySelector('.login-background').style.fontFamily=`"${window.config.login.fontFamily}",sans-serif`;
   document.fonts.ready.then(()=>{
     $('.login').show();
+    $('#un').focus();
   });
 }else {
   $('.login').show();
+  $('#un').focus();
 }
 document.querySelector('.login').style.color=window.config.login.fontColor;
 
@@ -32,7 +34,7 @@ $('.login-background').css('background',window.config.login.overlayColor);
 $('#game-name').html(window.config.gameName);
 if(window.config.login.backgroundColor != "")$('.login-form').css('background',window.config.login.formColor);
 
-$('#un').focus();
+
 
 $('.login-button').click((e)=>{
   e.preventDefault();
