@@ -59,11 +59,12 @@ window.socket.on('players-already-here', o=>{
       "name":o[key].name,
       "data":{"position":o[key].position,"rotation":o[key].rotation,"faceIndex":o[key].faceIndex,"thrust":o[key].thrust}});
   });
+  window.say(`Welcome to ${window.config.gameName}!`);
 });
 window.socket.on('new-player', newPlayerObject=>{
   console.log('New player object received: ', newPlayerObject);
   if(window.gameHasBegun && newPlayerObject.id != window.socket.id) {
-    setTimeout(()=>{window.announceNewPlayer(newPlayerObject.name)},1000);
+    setTimeout(()=>{window.say(`${newPlayerObject.name} has joined the game!`)},1000);
     window.addOtherPlayer(newPlayerObject);
   }
 });
@@ -71,7 +72,11 @@ window.socket.on('update-players', playersObject=>{
   if(window.gameHasBegun)window.updateOtherPlayers(playersObject);
 });
 window.socket.on('remove-player',id=>{
-  if(window.gameHasBegun && window.otherPlayers[id])window.removePlayer(id);
+  if(window.gameHasBegun && window.otherPlayers[id]){
+    let name = window.otherPlayers[id].name;
+    window.removePlayer(id);
+    setTimeout(()=>{window.say(`${name} has left the game!`)},1500);
+  }
 });
 window.socket.on('msg',data=>{
   if(window.gameHasBegun)window.setPlayerMessage(data);
