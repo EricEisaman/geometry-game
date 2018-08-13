@@ -61,6 +61,7 @@ document.querySelector('a-scene').addEventListener('loaded', function () {
     p.model = model;
     p.appendChild(model);
     p.id = newPlayerObject.id;
+    p.name = newPlayerObject.name;
     p.setAttribute('position',newPlayerObject.data.position);
     p.setAttribute('rotation',newPlayerObject.data.rotation);
     p.setAttribute('scale','1 1 1');
