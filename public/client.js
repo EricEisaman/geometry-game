@@ -1,3 +1,11 @@
+let title = document.querySelector('title');
+title.innerHTML=`${window.config.gameName} ${window.config.emoji}`;
+if(window.config.favicon.length > 0){
+  let link = document.createElement('link');
+  link.rel = 'icon';
+  link.href = window.config.favicon;
+  document.querySelector('head').appendChild(link);
+}
 /* Start Things Going After the Scene is Loaded and Login Complete
  ————————————————————————————————————————————————————————————————*/
 window.gameHasBegun = false;
