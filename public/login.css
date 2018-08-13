@@ -26,9 +26,8 @@ h1, h2, h3, h4, h5, h6, a {
   z-index: 999;
 }
 .login-header {
-  color:#fff;
   text-align:center;
-  font-size:300%;
+  font-size:200%;
 }
 .login-form {
   border:.5px solid #fff;
@@ -39,7 +38,6 @@ h1, h2, h3, h4, h5, h6, a {
 .login-form h3 {
   text-align:left;
   margin-left:40px;
-  color:#fff;
 }
 .login-form {
   box-sizing:border-box;
@@ -101,5 +99,8 @@ h1, h2, h3, h4, h5, h6, a {
   }
   .login-button {
     margin-bottom:10px;
+  }
+  .login-header {;
+    font-size:100%;
   }
 }
