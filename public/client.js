@@ -6,16 +6,22 @@ if(window.config.favicon.length > 0){
   link.href = window.config.favicon;
   document.querySelector('head').appendChild(link);
 }
+window.environment = document.querySelector('#environment');
+Object.keys(window.config.environment).forEach(key=>{
+  if(!window.config.environment[key].length)return;
+  window.environment.setAttribute('environment',`${key}:${window.config.environment[key]}`);
+});
+
+
 /* Start Things Going After the Scene is Loaded and Login Complete
  ————————————————————————————————————————————————————————————————*/
 window.gameHasBegun = false;
+window.setCustomPhysics();
 document.querySelector('a-scene').addEventListener('loaded', function () {
   
   //var element = document.querySelector('#some-id');
   window.scene = document.querySelector('a-scene');
-  window.environment = document.querySelector('#environment');
-  window.environment.setAttribute('environment',window.config.environment);
-  window.setCustomPhysics();
+  
   var player = document.querySelector('#player');
   player.components.camera.system.updateProperties();
   setTimeout(()=>{player.pause()},600);
