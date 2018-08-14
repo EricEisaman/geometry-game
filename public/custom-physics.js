@@ -20,8 +20,10 @@ window.setCustomPhysics = ()=>{
 window.updateBodies = (bodiesData)=>{
   if(Object.keys(window.bodies).length === 0 || !window.bodies[bodiesData[0].name] || !window.gameHasBegun) return;
   bodiesData.forEach( (d,index)=>{
-    console.warn('Individual body data from server:');
-    console.log(d);
+    if(window.debug){
+      console.warn('Individual body data from server:');
+      console.log(d);
+    }
     if(d.position) window.bodies[d.name].object3D.position.copy(d.position);
 		if(d.scale) window.bodies[d.name].object3D.scale.copy(d.scale);
 		if(d.rotation) window.bodies[d.name].object3D.quaternion.copy(d.rotation);
