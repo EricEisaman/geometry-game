@@ -72,6 +72,10 @@ ____
 
 ![App Screen3](https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2F4players.png?1534020052774)
 
+**Screenshot of Side Entrance to Sky Island** (Click to see fullsize image.)
+
+<a href="https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2Fexplore.png?1534258269725" no-opener no-referer><img src="https://cdn.glitch.com/162b879e-fd42-40d9-8519-671d783b8c70%2Fexplore.png?1534258269725"></a>
+
 **Environment Presets**  
 
 ![Environement Options](https://github.com/feiss/aframe-environment-component/raw/master/assets/aframeenvironment.gif?raw=true)
