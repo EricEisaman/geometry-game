@@ -65,13 +65,21 @@ window.socket.on('request-for-bodies', ()=>{
   let ibs = {};
   for(name in window.bodies){
     if (!window.bodies.hasOwnProperty(name)) continue;
-    ibs[name] = {position:window.bodies[name].object3D.position,
-                 rotation:window.bodies[name].object3D.getWorldRotation(),
-                 quaternion:window.bodies[name].object3D.getWorldQuaternion()};
-  }
+    ibs[name] = {
+          name: name,
+          position: window.bodies[name].object3D.position,
+          scale: window.bodies[name].object3D.scale,
+          rotation: { 
+            x: window.bodies[name].object3D.quaternion.x,
+            y: window.bodies[name].object3D.quaternion.y,
+            z: window.bodies[name].object3D.quaternion.z,
+            w: window.bodies[name].object3D.quaternion.w,
+          }
+        };
   window.socket.emit('initial-bodies-state',ibs);
   console.warn('SENDING INITIAL BODIES STATE TO SERVER');
   console.log(ibs);
+  }
 });
 window.socket.on('new-player', newPlayerObject=>{
   console.log('New player object received: ', newPlayerObject);

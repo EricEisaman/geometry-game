@@ -24,7 +24,7 @@ module.exports = (io)=>{
            let ibs = [];
            for(name in bodies){
              ibs.push(bodies[name]);
-           } 
+           }  
            socket.emit('initial-bodies-state',ibs);
            console.log('sending initial bodies state');
            console.log(ibs);
