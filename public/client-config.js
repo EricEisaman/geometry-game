@@ -25,7 +25,35 @@ window.config = {
  msg:{
   color: "#000"
  },
- environment:`shadow: true; playArea:1.3; shadowSize: 10;dressingAmount: 12;fog:0.7; preset:tron;`,
+ // https://github.com/feiss/aframe-environment-component
+ environment:{
+  preset:"tron",
+  seed:1,
+  shadow:true,
+  playArea:1.3, 
+  shadow:true,
+  shadowSize:10,
+  dressing:"",
+  dressingAmount:12, 
+  dressingColor:"",
+  dressingScale:15,
+  dressingVariance:"20 30 40",
+  dressingUniformScale:false,
+  fog:0.7, 
+  flatShading:false,
+  skyType:"", 
+  horizonColor:"", 
+  skyColor:"",
+  ground:"",
+  groundYScale:5,
+  groundTexture:"",
+  groundColor:"",
+  groundColor2:"",
+  grid:"",
+  gridColor:"",
+  lighting:"",
+  lightPosition:""
+ },
  //Soundcloud track numbers from share/embed code
  songs:[265693310,120585130,156420873,180582345,1801713],
  releasePointerLockOnUI: false,
@@ -48,10 +76,12 @@ window.config = {
    maxGrabDistance: 40,
    //These objects are not affected by gravity or collisions, but you can grab and move them
    objects:[
-            {geometry:'primitive: sphere; radius: 2',position:'-10 5 -10',color:'#7A42B8'},
-            {geometry:"radius:0.6;primitive:sphere",position:'-5 3 -10',color:'#FFF'},
-            {geometry:"radius:0.6;primitive:sphere",position:'10 3 -10',color:'#FFF'},
-            {geometry:"height:5;primitive:cone",position:'10 7 -10',color:'#7A42B8'}
+            {name:'Big Sphere', geometry:'primitive: sphere; radius: 2',position:'-10 5 -10',color:'#7A42B8'},
+            {name:'First Little Sphere',geometry:"radius:0.6;primitive:sphere",position:'-5 3 -10',color:'#FFF'},
+            {name:'Second Little Sphere',geometry:"radius:0.6;primitive:sphere",position:'10 3 -10',color:'#FFF'},
+            {name:'Cone',geometry:"height:5;primitive:cone",position:'10 7 -10',color:'#7A42B8'},
+            {name:'Big Torus',geometry:"radius:5;radiusTubular:0.3;primitive:torus",position:'0 8 -10',color:'#7A42B8'},
+            {name:'Little Torus',geometry:"radius:4;radiusTubular:1.0;primitive:torus",position:'0 21 -10',color:'#F00'}
            ]
  },
  thruster:{
@@ -59,4 +89,3 @@ window.config = {
    outerColor: "white"
  }
 }
-

@@ -8,7 +8,7 @@
   bgm.crossorigin = 'anonymous';
   bgm.autoplay = 'autoplay';
   bgm.loop = true;
-  bgm.volume = 0.05;
+  bgm.volume = 0.00;
   document.body.appendChild(bgm);
 
  

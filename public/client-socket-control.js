@@ -23,32 +23,27 @@ window.socket.sendUpdateToServer = ()=>{
     window.socket.emit('send-update',window.socket.playerData);
     window.socket.lastPlayerData = window.socket.playerData;
     let bodiesData = [];
-    window.bodies.forEach((e,index)=>{
-        //if(e.states.includes("moving"))
-        let d = {};
-        let pos,rot;
-        if(e.hasAttribute('dynamic-body')){
-          pos = e.getAttribute('position');
-          rot = e.getAttribute('rotation');
-          rot.x = Number(Number(rot.x).toFixed(1));
-          rot.y = Number(Number(rot.y).toFixed(1));
-          rot.z = Number(Number(rot.z).toFixed(1));
-        }else{
-          pos = e.object3D.position;
-          rot = e.object3D.rotation
-          //rot.x = Number(Number(rot._x*180/Math.PI).toFixed(1));
-          //rot.y = Number(Number(rot._y*180/Math.PI).toFixed(1));
-          //rot.z = Number(Number(rot._z*180/Math.PI).toFixed(1));
-        }
-        pos.x = Number(pos.x.toFixed(2));
-        pos.y = Number(pos.y.toFixed(2));
-        pos.z = Number(pos.z.toFixed(2));
-        d.position = pos;
-        d.rotation = rot; 
-        bodiesData[index]=d;
-     });
-     //console.log('set new crate data to send to server');
-    window.socket.emit('update-bodies',bodiesData);
+    for(var name in window.bodies){
+      if(window.bodies[name].states.includes("moving")){
+        let d = {
+          name: name,
+          position: window.bodies[name].object3D.position,
+          scale: window.bodies[name].object3D.scale,
+          rotation: { 
+            x: window.bodies[name].object3D.quaternion.x,
+            y: window.bodies[name].object3D.quaternion.y,
+            z: window.bodies[name].object3D.quaternion.z,
+            w: window.bodies[name].object3D.quaternion.w,
+          }
+        };
+        bodiesData.push(d);
+      }
+    }
+    if(bodiesData.length > 0) {
+      window.socket.emit('update-bodies',bodiesData);
+      console.warn(`SENDING ${bodiesData[0].name} DATA TO SERVER`);
+      console.log(bodiesData);
+    }
   }
 }
 window.socket.on('players-already-here', o=>{
@@ -60,6 +55,23 @@ window.socket.on('players-already-here', o=>{
       "data":{"position":o[key].position,"rotation":o[key].rotation,"faceIndex":o[key].faceIndex,"thrust":o[key].thrust}});
   });
   window.say(`Welcome to ${window.config.gameName}!`);
+});
+window.socket.on('initial-bodies-state', arr=>{
+  console.warn('SETTING INITIAL BODIES STATE');
+  console.log(arr);
+  window.updateBodies(arr);
+});
+window.socket.on('request-for-bodies', ()=>{
+  let ibs = {};
+  for(name in window.bodies){
+    if (!window.bodies.hasOwnProperty(name)) continue;
+    ibs[name] = {position:window.bodies[name].object3D.position,
+                 rotation:window.bodies[name].object3D.getWorldRotation(),
+                 quaternion:window.bodies[name].object3D.getWorldQuaternion()};
+  }
+  window.socket.emit('initial-bodies-state',ibs);
+  console.warn('SENDING INITIAL BODIES STATE TO SERVER');
+  console.log(ibs);
 });
 window.socket.on('new-player', newPlayerObject=>{
   console.log('New player object received: ', newPlayerObject);
