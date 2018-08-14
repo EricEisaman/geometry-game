@@ -41,8 +41,10 @@ window.socket.sendUpdateToServer = ()=>{
     }
     if(bodiesData.length > 0) {
       window.socket.emit('update-bodies',bodiesData);
-      console.warn(`SENDING ${bodiesData[0].name} DATA TO SERVER`);
-      console.log(bodiesData);
+      if(window.debug){
+        console.warn(`SENDING ${bodiesData[0].name} DATA TO SERVER`);
+        console.log(bodiesData);
+      }
     }
   }
 }
@@ -57,8 +59,10 @@ window.socket.on('players-already-here', o=>{
   window.say(`Welcome to ${window.config.gameName}!`);
 });
 window.socket.on('initial-bodies-state', arr=>{
-  console.warn('SETTING INITIAL BODIES STATE');
-  console.log(arr);
+  if(window.debug){
+    console.warn('SETTING INITIAL BODIES STATE');
+    console.log(arr);
+  }
   window.updateBodies(arr);
 });
 window.socket.on('request-for-bodies', ()=>{
@@ -76,9 +80,11 @@ window.socket.on('request-for-bodies', ()=>{
             w: window.bodies[name].object3D.quaternion.w,
           }
         };
-  window.socket.emit('initial-bodies-state',ibs);
-  console.warn('SENDING INITIAL BODIES STATE TO SERVER');
-  console.log(ibs);
+    window.socket.emit('initial-bodies-state',ibs);
+    if(window.debug){
+      console.warn('SENDING INITIAL BODIES STATE TO SERVER');
+      console.log(ibs);
+    }
   }
 });
 window.socket.on('new-player', newPlayerObject=>{
