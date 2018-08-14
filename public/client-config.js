@@ -75,13 +75,15 @@ window.config = {
    gravity: -9.8,
    maxGrabDistance: 40,
    //These objects are not affected by gravity or collisions, but you can grab and move them
+   // https://github.com/aframevr/aframe/blob/master/docs/components/geometry.md
    objects:[
             {name:'Big Sphere', geometry:'primitive: sphere; radius: 2',position:'-10 5 -10',color:'#7A42B8'},
             {name:'First Little Sphere',geometry:"radius:0.6;primitive:sphere",position:'-5 3 -10',color:'#FFF'},
             {name:'Second Little Sphere',geometry:"radius:0.6;primitive:sphere",position:'10 3 -10',color:'#FFF'},
             {name:'Cone',geometry:"height:5;primitive:cone",position:'10 7 -10',color:'#7A42B8'},
             {name:'Big Torus',geometry:"radius:5;radiusTubular:0.3;primitive:torus",position:'0 8 -10',color:'#7A42B8'},
-            {name:'Little Torus',geometry:"radius:4;radiusTubular:1.0;primitive:torus",position:'0 21 -10',color:'#F00'}
+            {name:'Little Torus',geometry:"radius:2;radiusTubular:0.8;primitive:torus",position:'0 21 -10',color:'#F00'},
+            {name:'Box',geometry:"primitive:box;width:4;height:7;depth:2",position:'-20 12 -10',color:'#F00'}
            ]
  },
  thruster:{
