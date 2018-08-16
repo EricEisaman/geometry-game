@@ -12,16 +12,23 @@
     <script src="https://cdn.rawgit.com/feiss/aframe-environment-component/ad57b15d/dist/aframe-environment-component.min.js"></script>
     <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
+    <script src="cursor-effects.js"></script>
     <title>☀️</title>
   </head>
   <body>
     <div style="position:relative;">
     <a-scene> 
+      <a-assets>
+        <img src="https://cdn.glitch.com/969cb4c8-d5f5-4980-8ed6-10a2b1fbb574%2F4thave-small.jpg?1505357175431" id="sky" />
+        <img src="https://cdn.glitch.com/51384993-d04d-4eb8-a1c6-b97ba65b8b94%2Fplaster-normal.jpg?1507086697487" id="plaster" />
+      </a-assets>
+
         
       <!--<a-entity animation-mixer
                 gltf-model="url(https://cdn.glitch.com/f54ba682-ab47-46e4-bf61-5e68e6053f18%2Fthing-idle.glb?1532828880828)"
                 position="0 0 0"
                 static-body="geometry:sphere"></a-entity>-->
+      
       
       <!--Sky Island-->
       <a-entity id="sky-island"
@@ -92,20 +99,16 @@
       
     </a-scene>
     <div id="dialog-container" style="position:absolute; top:0px; left:0px; z-index:1000;width:600">
-      <dialog id="dialog_" style="width:600">
-        <input id="msg_" placeholder="Enter your message here." style="width:460">
-        <input id="key_" placeholder="key" style="width:200">
-        <button id="submit-message_">
-          Submit Message
-        </button>
-      </dialog>
       <dialog id="dialog">
         <h3 class="modal-header">Send a Message or Change your Avatar</h3>
         <div class="modal-body">
           <input id="msg" placeholder="Enter your message.">
         </div>
-        <footer id="btns" class="modal-footer">
-
+        <footer id="bgm-footer" class="modal-footer">
+          <div id="bgm"></div>
+        </footer>
+        <footer id="btns-footer" class="modal-footer">
+          <div id="btns"></div>
         </footer>
       </dialog>
     </div>
@@ -141,7 +144,7 @@
     <script src="sounds.js"></script>
     <script src="voice.js"></script>
     <script src="thruster.js"></script>
-    <script src="cursor-effects.js"></script>
+    
     <script src="custom-physics.js"></script>
     <script src="client-socket-control.js"></script>
     <script src="client.js"></script>

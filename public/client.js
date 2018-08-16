@@ -11,8 +11,8 @@ Object.keys(window.config.environment).forEach(key=>{
   if(!window.config.environment[key].length)return;
   window.environment.setAttribute('environment',`${key}:${window.config.environment[key]}`);
 });
-window.debug = false;
 
+window.debug = false;
 /* Start Things Going After the Scene is Loaded and Login Complete
  ————————————————————————————————————————————————————————————————*/
 window.gameHasBegun = false;
