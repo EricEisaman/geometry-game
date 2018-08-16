@@ -1,11 +1,11 @@
-if(window.config.login.fontFamily.length > 0){
+if(window.config.theme.fontFamily.length > 0){
   let link = document.createElement('link');
   //<link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" type="text/css">
   link.rel="stylesheet";
   link.type="text/css";
-  link.href=`https://fonts.googleapis.com/css?family=${window.config.login.fontFamily}`;
+  link.href=`https://fonts.googleapis.com/css?family=${window.config.theme.fontFamily}`;
   document.querySelector('head').appendChild(link);
-  document.querySelector('.login-background').style.fontFamily=`"${window.config.login.fontFamily}",sans-serif`;
+  document.querySelector('.login-background').style.fontFamily=`"${window.config.theme.fontFamily}",sans-serif`;
   document.fonts.ready.then(()=>{
     $('.login').show();
     $('#un').focus();
@@ -14,7 +14,7 @@ if(window.config.login.fontFamily.length > 0){
   $('.login').show();
   $('#un').focus();
 }
-document.querySelector('.login').style.color=window.config.login.fontColor;
+document.querySelector('.login').style.color=window.config.theme.fontColor;
 
 $('.error-page').hide(0);
 
@@ -29,10 +29,10 @@ $('.try-again').click(function(){
   $('#un').focus();
 });
 
-$('.login-background').css('background',window.config.login.overlayColor);
+$('.login-background').css('background',window.config.theme.overlayColor);
 
 $('#game-name').html(window.config.gameName);
-if(window.config.login.backgroundColor != "")$('.login-form').css('background',window.config.login.formColor);
+if(window.config.theme.backgroundColor != "")$('.login-form').css('background',window.config.theme.formColor);
 
 
 

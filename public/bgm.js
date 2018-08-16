@@ -9,7 +9,8 @@
   bgm.autoplay = 'autoplay';
   bgm.loop = true;
   bgm.volume = 0.00;
-  document.body.appendChild(bgm);
+  bgm.setAttribute('controls','');
+  document.querySelector('#bgm').appendChild(bgm);
 
  
   var nextSongBtn = document.createElement('button');
@@ -51,6 +52,15 @@ document.body.addEventListener('keyup',e=>{
        }
    }
 });
+
+let i = setInterval(()=>{
+ if(window.gameHasBegun){
+   console.log('playing background music');
+   bgm.volume = 0.05;
+   bgm.play();
+   clearInterval(i);
+ }
+},3000);
 
 
 
