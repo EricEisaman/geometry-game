@@ -76,6 +76,7 @@ window.config = {
    maxGrabDistance: 40,
    //These objects are not affected by gravity or collisions, but you can grab and move them
    // https://github.com/aframevr/aframe/blob/master/docs/components/geometry.md
+   // These objects require a unique name.
    objects:[
       {name:'Big Sphere', geometry:'primitive: sphere; radius: 2',position:'-10 5 -10',color:'#7A42B8'},
       {name:'First Little Sphere',geometry:"radius:0.6;primitive:sphere",position:'-5 3 -10',color:'#FFF'},
@@ -94,5 +95,9 @@ window.config = {
  thruster:{
    innerColor: "purple",
    outerColor: "white"
- }
+ },
+ mobile:{
+   thruster_icon: "https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Fthrusters.png"
+ },
+ vr: false
 }

@@ -11,25 +11,7 @@ window.dialog = {
     window.dialog.isShowing = false;
     document.body.addEventListener('keydown',function(e){
       if(e.code == window.config.keys.toggleUI ){
-        if(window.dialog.isShowing){
-          window.dialog.ui.close();
-          window.dialog.isShowing = false;
-          if(window.config.releasePointerLockOnUI){
-            let c = document.getElementsByTagName('canvas')[0];
-            c.requestPointerLock();
-          }
-        }else if(typeof window.setPlayerProperty != "undefined"){
-          e.preventDefault();
-          document.getElementById('msg').value = '';
-          window.dialog.ui.show();
-          window.dialog.isShowing = true;
-          if(window.config.releasePointerLockOnUI){
-            document.exitPointerLock = document.exitPointerLock    ||
-                                     document.mozExitPointerLock;
-            // Attempt to unlock
-            document.exitPointerLock();
-          }
-        }
+        window.dialog.toggleUI(e);
       }else if(e.keyCode == 13 && window.dialog.isShowing 
                && document.getElementById('msg').value.length > 0){
         window.dialog.submit();
@@ -84,6 +66,29 @@ window.dialog = {
     });
     
     
+  },
+  toggleUI: (e)=>{
+  
+    if(window.dialog.isShowing){
+          window.dialog.ui.close();
+          window.dialog.isShowing = false;
+          if(window.config.releasePointerLockOnUI){
+            let c = document.getElementsByTagName('canvas')[0];
+            c.requestPointerLock();
+          }
+        }else if(typeof window.setPlayerProperty != "undefined"){
+          e.preventDefault();
+          document.getElementById('msg').value = '';
+          window.dialog.ui.show();
+          window.dialog.isShowing = true;
+          if(window.config.releasePointerLockOnUI){
+            document.exitPointerLock = document.exitPointerLock    ||
+                                     document.mozExitPointerLock;
+            // Attempt to unlock
+            document.exitPointerLock();
+          }
+        }
+  
   }
 }
 window.dialog.init();
@@ -109,7 +114,23 @@ function ColorLuminance(hex, lum) {
 	return rgb;
 }
 
-  
+var mylatesttap;
+if(AFRAME.utils.isMobile()) document.body.addEventListener('click',e=>{
+  var now = new Date().getTime();
+   var timesince = now - mylatesttap;
+   if((timesince < 600) && (timesince > 0)){
+
+    // double tap 
+    window.dialog.toggleUI(e);
+
+   }else{
+    // single tap
+     
+   }
+   mylatesttap = new Date().getTime();
+
+});
+
   
   
   

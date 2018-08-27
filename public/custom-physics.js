@@ -84,7 +84,7 @@ window.setCustomPhysics = ()=>{
 window.updateBodies = (bodiesData)=>{
   if(Object.keys(window.bodies).length === 0 || !window.bodies[bodiesData[0].name] || !window.gameHasBegun) return;
   bodiesData.forEach( (d,index)=>{
-    if(window.config){
+    if(window.debug){
       console.warn('Individual body data from server:');
       console.log(d);
     } 
