@@ -8,7 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet" type="text/css">
     <link href="login.css" rel="stylesheet" type="text/css" />
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <link href="mobile.css" rel="stylesheet" type="text/css" />
+    <!--<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>-->
+    <script src="https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Faframe-v0.7.0.min.js"></script>
     <script src="https://cdn.rawgit.com/feiss/aframe-environment-component/ad57b15d/dist/aframe-environment-component.min.js"></script>
     <script src="https://rawgit.com/takahirox/aframe-rain/master/build/aframe-rain.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.4/dist/aframe-extras.min.js"></script>
@@ -16,7 +18,7 @@
     <title>☀️</title>
   </head>
   <body>
-    <div style="position:relative;">
+    <div id="container" style="position:relative;">
     <a-scene> 
       <a-assets>
         <img src="https://cdn.glitch.com/969cb4c8-d5f5-4980-8ed6-10a2b1fbb574%2F4thave-small.jpg?1505357175431" id="sky" />
@@ -84,7 +86,7 @@
                 kinematic-body="radius: 0.8"
                 jump-ability="maxJumps: 200
                               distance: 5">
-        <a-entity id="cam-cursor" cursor="fuse: false; fuseTimeout: 500;"
+        <a-entity id="cam-cursor" cursor="fuseTimeout: 2000;"
                   position="0 0 -1"
                   geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                   material="color: white; shader: flat">
@@ -98,7 +100,7 @@
       
       
     </a-scene>
-    <div id="dialog-container" style="position:absolute; top:0px; left:0px; z-index:1000;width:600">
+    <div id="dialog-container" style="position:absolute; top:0px; left:0px; z-index:1000;width:100%">
       <dialog id="dialog">
         <h3 class="modal-header">Send a Message or Change your Avatar</h3>
         <div class="modal-body">
@@ -112,27 +114,32 @@
         </footer>
       </dialog>
     </div>
-      <div id="login">
+    <div id="login">
           <div class="login-background">
-          <div class="login">
-            <div class="login-header">
-              <h1 id="game-name">Login</h1>
+              <div class="login">
+                <div class="login-header">
+                  <h1 id="game-name">Login</h1>
+                </div>
+                <div class="login-form">
+                  <h3>Username:</h3>
+                  <input id="un" type="text" placeholder="Username"/><br>
+                  <h3>Password:</h3>
+                  <input id="pw" type="password" placeholder="Password"/>
+                  <br>
+                  <input type="button" value="Login" class="login-button"/>
+                  <br>
+                </div>
             </div>
-            <div class="login-form">
-              <h3>Username:</h3>
-              <input id="un" type="text" placeholder="Username"/><br>
-              <h3>Password:</h3>
-              <input id="pw" type="password" placeholder="Password"/>
-              <br>
-              <input type="button" value="Login" class="login-button"/>
-              <br>
+            <div class="error-page">
+              <div class="try-again">Error: Try again?</div>
             </div>
-        </div>
-        <div class="error-page">
-          <div class="try-again">Error: Try again?</div>
-        </div>
-      </div>  
+          </div>  
       </div>
+      <div>
+        <div id="thruster-btn" style="float:top"></div>
+        <div id="joystick-container" style="width:50%;float:left"></div> 
+        <div id="pitch-controller" style="width:50%;float:right;height:100%"></div>    
+      </div> 
     </div>
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
             integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
@@ -148,6 +155,8 @@
     <script src="custom-physics.js"></script>
     <script src="client-socket-control.js"></script>
     <script src="client.js"></script>
+    <script src="game.js"></script>
+    <script src="mobile.js"></script>
     <script src="login.js"></script>
     <script src="pshape-helper.js"></script>
   </body>

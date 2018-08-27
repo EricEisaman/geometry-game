@@ -119,8 +119,13 @@ AFRAME.registerComponent("grabbable", {
 
 		self.el.classList.add("interactive");
 
-		self.el.addEventListener("mousedown", function(e)
-		{
+		self.el.addEventListener("mousedown", grab);
+    if(AFRAME.utils.device.isMobile())self.el.addEventListener("click", function(e){
+       grab(e);
+       setTimeout(e=>{release(e)},5000);
+    });
+    
+    function grab(e){
 			e.cancelBubble = true;
 			if(isDragging) return;
       
@@ -138,9 +143,11 @@ AFRAME.registerComponent("grabbable", {
 			
 			self.originEl.emit("grabStart", e);
 			self.originEl.addState("moving");
-		});
+		}
 
-		self.el.addEventListener("mouseup", function(e)
+		self.el.addEventListener("mouseup", release);
+    
+    function release(e)
 		{
 			if(isDragging)
 			{
@@ -158,7 +165,7 @@ AFRAME.registerComponent("grabbable", {
 				self.originEl.emit("grabEnd", e);
 				self.originEl.removeState("moving");
 			}
-		});
+		}
 
 		function createProxyObject(cursorObject)
 		{

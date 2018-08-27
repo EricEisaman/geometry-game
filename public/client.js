@@ -23,6 +23,7 @@ document.querySelector('a-scene').addEventListener('loaded', function () {
   window.scene = document.querySelector('a-scene');
   
   var player = document.querySelector('#player');
+  window.player = player;
   player.components.camera.system.updateProperties();
   setTimeout(()=>{player.pause()},600);
   window.login = document.querySelector('#login');
