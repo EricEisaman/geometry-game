@@ -96,6 +96,19 @@ ____
 ( plugin for Blender v2.79 <a href="https://github.com/KhronosGroup/glTF-Blender-Exporter" no-opener no-referer>here</a>. Note: Blender v2.80 will have built-in plugin )
 ![.glb export](https://cdn.glitch.com/f54ba682-ab47-46e4-bf61-5e68e6053f18%2Fexport.png?1532962417545)
 
+## Mobile Performance
+
+- Joystick ( forward, backward, yaw )
+- Pitch control ( touch drag right side of screen )
+- Thruster Button ( up and forward )
+- Message, Background Music, Avatar UI ( double tap )
+- Putting the cursor over a movable object for 2 seconds triggers 5 seconds of grab and move ability.
+
+![mobile-0](https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Fmobile_0.jpg?1535470988490)
+![mobile-1](https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Fmobile_1.jpg?1535470988578)
+![mobile-2](https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Fmobile_2.jpg?1535470988342)
+
+
 ## Special Thanks
 
 I would like to extend special thanks to <a href="https://sketchfab.com/ZOSK" no-opener no-referer>**ZOSK Studios**</a> for the creation of the sky island model used in this project.
