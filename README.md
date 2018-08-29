@@ -7,7 +7,7 @@ ____
 
 
 
-Set the **ADMIN_KEY** in .env. Create your own **.glb** models with <a href="http://pixologic.com/sculptris/" no-opener no-referer>**Sculptris**</a> and <a href="https://www.blender.org/download/" no-opener no-referer>**Blender**</a>.
+Set the **ADMIN_KEY** in .env. This becomes your admin user password, username **admin**, password your **ADMIN_KEY**. Create your own **.glb** models with <a href="http://pixologic.com/sculptris/" no-opener no-referer>**Sculptris**</a> and <a href="https://www.blender.org/download/" no-opener no-referer>**Blender**</a>.
 
 In the **client-config.js** set the values for:
   - game name
@@ -30,6 +30,8 @@ In the **client-config.js** set the values for:
   - movable physics objects to be added to the scene
   - environment settings
   - thruster colors
+  - mobile thruster button icon
+  - vr mode enabled / disabled
   
 Explore the different voice names by listing them in the client console with:
 ```js
@@ -59,6 +61,7 @@ Note: **Users cannot be logged in more than once simultaneously!**
 Pressing the **F** key or clicking the **VR Headset Icon** will take you to fullscreen mode.  Note: in fullscreen mode only movement keys are enabled.  Press the **ESC** key to exit fullscreen mode. 
 
 <a href="https://geometry-game.glitch.me/" no-opener no-referer>**LIVE DEMO**</a>
+
 
 ____
 
@@ -107,6 +110,21 @@ ____
 ![mobile-0](https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Fmobile_0.jpg?1535470988490)
 ![mobile-1](https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Fmobile_1.jpg?1535470988578)
 ![mobile-2](https://cdn.glitch.com/dd72d0a0-2747-40ff-8463-f7755366f80f%2Fmobile_2.jpg?1535470988342)
+
+
+
+## Related Videos
+
+[color and font themes](https://youtu.be/5SWlbeJzCDM)
+
+[overview 1](https://youtu.be/eUVZ-o8N72U)
+
+[overview 2](https://youtu.be/11lV0jJpN7w)
+
+[overview 3](https://youtu.be/SIOQWoPyXGU)
+
+[overview 4](https://youtu.be/PaJe14bQMCY)
+
 
 
 ## Special Thanks
