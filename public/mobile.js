@@ -257,6 +257,10 @@ if(AFRAME.utils.device.isMobile()){
     var vx = -10 * Math.sin(angle.y * Math.PI / 180);
     //let v = window.player.getAttribute('velocity');
     window.player.setAttribute('velocity', {x: vx, y: 25, z: vz});
+    window.player.isThrusting = true;
+    setTimeout(()=>{
+      window.player.isThrusting = false;
+    },1000);
   });
   let s = document.querySelector('a-scene');
   s.setAttribute('vr-mode-ui',`enabled: ${window.config.vr}`);
