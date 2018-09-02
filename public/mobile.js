@@ -77,7 +77,10 @@ class JoystickInner extends JoystickElement {
     }
     
     move(from, to, duration, callback){
-        // not implemented
+        // quick approximation
+       this.element.style.left = (to.x-from.x) + 28  + "px";
+       this.element.style.top = (to.y-from.y) + 28 + "px";
+       callback();
     }
 }
 
@@ -86,7 +89,7 @@ class Joystick {
         this.state = 'inactive';
         this.outer = new JoystickElement(outer);
         this.inner = new JoystickInner(inner);
-        this.boundary = this.outer.rect.radius * 0.75;
+        this.boundary = 32;
         
         this.onactivate = function(){};
         this.ondeactivate = function(){};
