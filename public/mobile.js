@@ -264,10 +264,7 @@ if(AFRAME.utils.device.isMobile()){
     setTimeout(()=>{
       window.player.isThrusting = false;
     },1000);
-  });
-  let s = document.querySelector('a-scene');
-  s.setAttribute('vr-mode-ui',`enabled: ${window.config.vr}`);
-  
+  }); 
 }
 
 

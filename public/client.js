@@ -21,6 +21,7 @@ document.querySelector('a-scene').addEventListener('loaded', function () {
   
   //var element = document.querySelector('#some-id');
   window.scene = document.querySelector('a-scene');
+  window.scene.setAttribute('vr-mode-ui',`enabled: ${window.config.vr}`);
   
   var player = document.querySelector('#player');
   window.player = player;
